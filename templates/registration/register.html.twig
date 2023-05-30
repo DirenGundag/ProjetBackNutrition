@@ -6,19 +6,150 @@
     {% for flash_error in app.flashes('verify_email_error') %}
         <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
     {% endfor %}
+<div class="conteneur">
+    <div>
+      <img class="image" src="https://media.discordapp.net/attachments/971727360430850062/1112867483133677628/de057f7bfb707a1af6ffd57d03094142-removebg-preview.png?width=372&height=586" alt="">
+    </div>
 
-    <h1>Register</h1>
+    <div class="cadre">
+
+    <h1 class="titreH1">Inscrivez-vous</h1>
 
     {{ form_start(registrationForm) }}
+    <div>
     {{ form_row(registrationForm.nom) }}
+  </div>
+  <div>
     {{ form_row(registrationForm.prenom) }}
+  </div>
     {{ form_row(registrationForm.numTel) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
+        {{ form_row(registrationForm.email, {
+            label:"Adresse mail"
         }) }}
-        {{ form_row(registrationForm.agreeTerms) }}
+        {{ form_row(registrationForm.plainPassword, {
+            label: 'Mot de passe'
+        }) }}
+        {{ form_row(registrationForm.agreeTerms, {
+            label:"Accepter les conditions d'utilisation"
+        }) }}
 
-        <button type="submit" class="btn">Register</button>
+
+    <div class="bouton">
+        <button type="submit" class="btn">S'inscrire</button>
+    </div>
     {{ form_end(registrationForm) }}
+
+    </div>
+  </div>
+     <style>
+
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+ .alert {
+  margin-bottom: 10px;
+  padding: 10px;
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+}
+
+.cadre {
+  border: 1px solid #000;
+  padding: 40px;
+  width: 50%;
+  margin-top:5%;
+  margin-left:5%;
+  margin-bottom:5%;
+  border-radius:10%;
+}
+
+.titreh1 {
+  font-size: 34px;
+  margin-bottom: 20px;
+  text-align: center;
+
+}
+
+.bouton {
+  margin-top: 20px;
+  margin-left: 40%;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  background-color: #609A7D;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #609A7D;
+}
+
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+/* Style for input fields */
+ input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"] {
+  display: block;
+  width: 70%;
+  padding: 10px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  margin-bottom: 10px;
+  margin-left: 15%;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="tel"]:focus {
+  border-color: #80bdff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+label {
+  font-weight: bold;
+  margin-left: 15%;
+}
+.image{
+  width: 450px;
+  margin-top: 14%;
+  border-radius: 20px;
+}
+.conteneur {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+</style>  
 {% endblock %}
