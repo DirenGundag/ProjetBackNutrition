@@ -4,67 +4,70 @@
 
 {% block body %}
 
-<div class="contTeneur">
-<div>
-  <img src="" alt="">
-</div>
+<div class="conteneur">
 
 
 <div class="titrecontact">
   <h2>Contact</h2>
-</div>
 <form
 action="https://formspree.io/f/mayzzryy"
 method="POST"
 >
 <div>
-  <label for="name">Nom :</label>
-  <input type="text" id="name" name="name" required>
+  {# <label for="name">Nom :</label> #}
+  <input type="text" id="name" name="name" required placeholder="Nom">
 </div>
 <div>
-  <label for="email">Email :</label>
-  <input type="email" id="email" name="email" required>
+  {# <label for="email">Email :</label> #}
+  <input type="email" id="email" name="email" required placeholder="Email">
 </div>
 <div>
-  <label for="subject">Sujet :</label>
-  <input type="text" id="subject" name="subject" required>
+  {# <label for="subject">Sujet :</label> #}
+  <input type="text" id="subject" name="subject" required placeholder="Sujet">
 </div>
 <div>
-  <label for="message">Message :</label>
-  <textarea id="message" name="message" required></textarea>
+  {# <label for="message">Message :</label> #}
+  <textarea id="message" name="message" required placeholder="Message"></textarea>
 </div>
 <button type="submit" >Envoyer</button>
 </form>
+</div>
+<div class="image-container">
+  <img class="image" src="https://media.discordapp.net/attachments/971727360430850062/1113830837239152821/image.jpg?width=530&height=426" alt="">
+</div>
 </div>
 
 <style>
   form {
     max-width: 500px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 40px;
     border: 1px solid;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
     margin-top: 2%;
     margin-bottom: 4%;
-    width: 60%;
+    float: left;
+    width: 250%;
+    margin-right: 200px;
   }
   
   form div {
     margin-bottom: 10px;
+    padding: 10px;
   }
   
-  form label {
+  /* form label {
     display: inline-block;
     width: 100px;
     font-weight: bold;
     margin-bottom: 5px;
-  }
+  } */
   
   form input, form textarea {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #000;
     border-radius: 4px;
     font-size: 16px;
   }
@@ -82,19 +85,27 @@ method="POST"
     cursor: pointer;
     font-size: 16px;
     margin-top: 10px;
-    margin-left: 40%;
     font-family: arial;
   }
   
  .titrecontact {
     text-align: center;
-    margin-top: 2%;
+    margin-top: 3%;
     font-family: arial;
+    margin-right: 100px;
   }
   .conteneur {
   display: flex;
   justify-content: center;
   align-items: flex-start;
+}
+.image-container {
+    float: right;
+    width: 40%;
+  }
+  .image{
+    width: 100%;
+    margin-top: 25%;
 }
 </style>
 {% endblock %}
