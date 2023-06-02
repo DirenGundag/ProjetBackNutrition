@@ -3,18 +3,91 @@
 {% block title %}Hello MentionsLegalesController!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Mentions Légales</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+}
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+h1 {
+    font-size: 34px;
+    margin-bottom: 20px;
+    text-align: center;
+}
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/xampp/apps/ProjetBackNutrition/src/Controller/MentionsLegalesController.php'|file_link(0) }}">src/Controller/MentionsLegalesController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/xampp/apps/ProjetBackNutrition/templates/mentions_legales/index.html.twig'|file_link(0) }}">templates/mentions_legales/index.html.twig</a></code></li>
-    </ul>
+h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    text-decoration: underline;
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: F3F3F7;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Mentions Légales</h1>
+    
+    <h2>Informations générales</h2>
+    <p>Raison sociale : Diététicienne & Nutritionniste</p>
+    <p>Forme juridique : Entreprise individuelle</p>
+    <p>Adresse : 17 avenue de la paix Caen - 14000</p>
+    <p>Téléphone : 01 03 08 10 21</p>
+    <p>Email : sandrine.coupart@gmail.com</p>
+    <p>SIRET : 123456789</p>
+    <p>Capital social : 10 000 Euros</p>
+    
+    <h2>Directeur de la publication</h2>
+    <p>Nom du directeur : Sandrine Coupart</p>
+    <p>Adresse : 25 rue de la République Caen - 14000</p>
+    <p>Téléphone : 06 24 25 03 10</p>
+    <p>Email : sandrine.coupart@gmail.com</p>
+    
+    <h2>Hébergement</h2>
+    <p>Nom de l'hébergeur : Sandrine Coupart</p>
+    <p>Adresse : 25 rue de la République Caen - 14000</p>
+    <p>Téléphone : 06 24 25 03 10</p>
+    <p>Email : sandrine.coupart@gmail.com</p>
+    
+    <h2>Propriété intellectuelle</h2>
+    <p>Tous les éléments présents sur ce site sont protégés par les lois relatives à la propriété intellectuelle. Toute reproduction, représentation, modification, publication, adaptation, de tout ou partie des éléments du site, quel que soit le moyen ou le procédé utilisé, est interdite.</p>
+    
+    <h2>Protection des données personnelles</h2>
+    <p>Les informations personnelles collectées via ce site sont utilisées dans le cadre de [décrire l'objectif de la collecte des données personnelles]. Vous disposez d'un droit d'accès, de rectification et de suppression de vos données personnelles en contactant [indiquer les coordonnées pour exercer ces droits].</p>
+    
+    <h2>Cookies</h2>
+    <p>Ce site utilise des cookies pour améliorer l'expérience de l'utilisateur. En naviguant sur ce site, vous acceptez l'utilisation de cookies.</p>
+    
+    <h2>Liens externes</h2>
+    <p>Ce site peut contenir des liens vers des sites externes. Nous ne sommes pas responsables du contenu présent sur ces sites et déclinons toute responsabilité quant à leur contenu ou leur utilisation.</p>
+    
+    <h2>Limitation de responsabilité</h2>
+    <p>Nous nous efforçons de maintenir les informations présentes sur ce site à jour et exactes. Cependant, nous ne pouvons garantir l'exactitude, l'exhaustivité ou la pertinence des informations fournies. En conséquence, l'utilisation des informations disponibles sur ce site se fait à vos propres risques.</p>
+    
+    <h2>Modification des mentions légales</h2>
+    <p>Nous nous réservons le droit de modifier ces mentions légales à tout moment. Il est de votre responsabilité de consulter régulièrement cette page pour prendre connaissance des éventuelles modifications.</p>
+    
+    <p>Date de dernière mise à jour : 04/06/2023</p>
 </div>
+</body>
+</html>
+
 {% endblock %}
