@@ -3,18 +3,118 @@
 {% block title %}Hello PolitiqueConfidentialiteController!{% endblock %}
 
 {% block body %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Politique de confidentialité</title>
 <style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+    body {
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    font-size: 34px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    text-decoration: underline;
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+ul {
+    margin-bottom: 10px;
+    margin-left: 20px;
+}
+
+li {
+    margin-bottom: 5px;
+}
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: F3F3F7;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 </style>
+</head>
+<body>
+    <div class="container">
+    <h1>Politique de confidentialité</h1>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <p>Cette politique de confidentialité décrit comment nous collectons, utilisons et partageons vos informations personnelles lorsque vous utilisez notre site web.</p>
 
-    This friendly message is coming from:
+    <h2>Collecte des informations personnelles</h2>
+
+    <p>Nous collectons les informations personnelles suivantes :</p>
+
     <ul>
-        <li>Your controller at <code><a href="{{ 'C:/xampp/apps/ProjetBackNutrition/src/Controller/PolitiqueConfidentialiteController.php'|file_link(0) }}">src/Controller/PolitiqueConfidentialiteController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/xampp/apps/ProjetBackNutrition/templates/politique_confidentialite/index.html.twig'|file_link(0) }}">templates/politique_confidentialite/index.html.twig</a></code></li>
+        <li>Nom et prénom</li>
+        <li>Adresse e-mail</li>
+        <li>Numéro de téléphone</li>
+        <li>Autres informations que vous nous fournissez volontairement</li>
     </ul>
-</div>
+
+    <p>Nous collectons ces informations lorsque vous remplissez un formulaire sur notre site web, par exemple pour vous inscrire à notre newsletter ou pour nous contacter.</p>
+
+    <h2>Utilisation des informations personnelles</h2>
+
+    <p>Nous utilisons vos informations personnelles pour les finalités suivantes :</p>
+
+    <ul>
+        <li>Répondre à vos demandes et vous fournir les informations demandées</li>
+        <li>Vous envoyer des communications marketing si vous avez consenti à les recevoir</li>
+        <li>Améliorer notre site web et nos services</li>
+    </ul>
+
+    <h2>Partage des informations personnelles</h2>
+
+    <p>Nous ne vendons, n'échangeons ni ne louons vos informations personnelles à des tiers, sauf dans les cas suivants :</p>
+
+    <ul>
+        <li>Lorsque nous avons votre consentement explicite pour le partage des informations</li>
+        <li>Lorsque cela est nécessaire pour fournir un service que vous avez demandé (par exemple, l'envoi d'une newsletter par le biais d'un fournisseur de services tiers)</li>
+        <li>Si nous sommes légalement tenus de le faire, par exemple en réponse à une demande légale ou à une ordonnance d'un tribunal</li>
+    </ul>
+
+    <h2>Conservation des informations personnelles</h2>
+
+    <p>Nous conservons vos informations personnelles aussi longtemps que nécessaire pour atteindre les finalités décrites dans cette politique de confidentialité, sauf si une période de conservation plus longue est requise ou autorisée par la loi.</p>
+
+    <h2>Vos droits</h2>
+
+    <p>Vous avez les droits suivants concernant vos informations personnelles :</p>
+
+    <ul>
+        <li>Le droit d'accéder à vos informations personnelles</li>
+        <li>Le droit de rectifier vos informations personnelles inexactes ou incomplètes</li>
+        <li>Le droit de demander l'effacement de vos informations personnelles</li>
+        <li>Le droit de limiter le traitement de vos informations personnelles</li>
+        <li>Le droit de vous opposer au traitement de vos informations personnelles</li>
+        <li>Le droit à la portabilité des données</li>
+    </ul>
+
+    <h2>Contactez-nous</h2>
+
+    <p>Pour toute question ou demande concernant cette politique de confidentialité, vous pouvez nous contacter à l'adresse suivante :</p>
+
+    <p>Nom de l'entreprise : Diététicienne & Nutritionniste</p>
+    <p>Adresse postale : 17 avenue de la paix Caen - 14000</p>
+    <p>Adresse e-mail : sandrine.coupart@gmail.com</p>
+
+    <p>Dernière mise à jour : 04/06/2023</p>
+    </div>
+</body>
+</html>
+
 {% endblock %}
