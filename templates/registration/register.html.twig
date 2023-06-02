@@ -17,17 +17,23 @@
 
     {{ form_start(registrationForm) }}
     <div>
-    {{ form_row(registrationForm.nom) }}
+    {{ form_row(registrationForm.nom, {
+      label: false
+    }) }}
   </div>
   <div>
-    {{ form_row(registrationForm.prenom) }}
+    {{ form_row(registrationForm.prenom, {
+      label: false
+    }) }}
   </div>
-    {{ form_row(registrationForm.numTel) }}
+    {{ form_row(registrationForm.numTel, {
+      label: false
+    }) }}
         {{ form_row(registrationForm.email, {
-            label:"Adresse mail"
+          label: false
         }) }}
         {{ form_row(registrationForm.plainPassword, {
-            label: 'Mot de passe'
+          label: false
         }) }}
         {{ form_row(registrationForm.agreeTerms, {
             label:"Accepter les conditions d'utilisation"
@@ -127,6 +133,7 @@ input[type="tel"] {
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   margin-bottom: 10px;
   margin-left: 15%;
+  margin-top: 6%;
 }
 
 input[type="text"]:focus,
@@ -140,9 +147,10 @@ input[type="tel"]:focus {
 label {
   font-weight: bold;
   margin-left: 15%;
+  margin-top: 4%;
 }
 .image{
-  width: 450px;
+  width: 420px;
   margin-top: 14%;
   border-radius: 20px;
 }
