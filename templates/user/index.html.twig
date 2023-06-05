@@ -10,12 +10,11 @@
             <tr>
                 <th>Id</th>
                 <th>Email</th>
-                <th>Roles</th>
-                <th>Password</th>
                 <th>Nom</th>
                 <th>Prenom</th>
                 <th>NumTel</th>
-                <th>IsVerified</th>
+                <th>Régimes</th>
+                <th>Allergies</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -24,12 +23,18 @@
             <tr>
                 <td>{{ user.id }}</td>
                 <td>{{ user.email }}</td>
-                <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
-                <td>{{ user.password }}</td>
                 <td>{{ user.nom }}</td>
                 <td>{{ user.prenom }}</td>
                 <td>{{ user.numTel }}</td>
-                <td>{{ user.isVerified ? 'Yes' : 'No' }}</td>
+        {% for regime in user.regimes %}
+                <td>{{ regime.nom }}</td>
+            {% endfor %}
+
+            {% for allergie in user.allergies %}
+                <td>{{ allergie.nom }}</td>
+
+            {% endfor %}
+                
                 <td>
                     <a href="{{ path('app_user_show', {'id': user.id}) }}">show</a>
                     <a href="{{ path('app_user_edit', {'id': user.id}) }}">edit</a>

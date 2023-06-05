@@ -3,8 +3,11 @@
 namespace App\Form;
 
 use App\Entity\User;
+use App\Entity\Allergie;
+use App\Entity\Regime;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
@@ -83,6 +86,16 @@ class RegistrationFormType extends AbstractType
                         'max' => 4096,
                     ]),
                 ],
+            ])
+            ->add('allergies', EntityType::class, [
+                'class' => Allergie::class,
+                'multiple' => true,
+                'expanded' => false,
+            ])
+            ->add('regimes', EntityType::class, [
+                'class' => Regime::class,
+                'multiple' => true,
+                'expanded' => false,
             ])
         ;
     }

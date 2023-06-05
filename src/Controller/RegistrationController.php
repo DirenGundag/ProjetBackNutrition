@@ -40,6 +40,17 @@ class RegistrationController extends AbstractController
                     $form->get('plainPassword')->getData()
                 )
             );
+            $regimes = $form->get('regimes')->getData();
+            $allergies = $form->get('allergies')->getData();
+
+            foreach ($regimes as $regime) {
+                $regime->addUser($user);
+            }
+            foreach ($allergies as $allergie) {
+                $allergie->addUser($user);
+            }
+
+            
 
             $entityManager->persist($user);
             $entityManager->flush();
