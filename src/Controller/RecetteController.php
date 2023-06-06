@@ -31,6 +31,20 @@ class RecetteController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $recetteRepository->save($recette, true);
 
+            $regimes = $form->get('regimes')->getData();
+            $allergies = $form->get('allergies')->getData();
+
+            $recetteRepository->saveRecette($recette);
+
+            foreach ($regimes as $regime) {
+                $regime->addRecette($recette);
+                $recetteRepository->saveRegime($regime);
+            }
+            foreach ($allergies as $allergy) {
+                $allergy->addRecette($recette);
+                $recetteRepository->saveAllergie($allergy);
+            }
+
             return $this->redirectToRoute('app_recette_index', [], Response::HTTP_SEE_OTHER);
         }
 
@@ -56,6 +70,31 @@ class RecetteController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $recetteRepository->save($recette, true);
+
+            $regimes = $form->get('regimes')->getData();
+            $allergies = $form->get('allergies')->getData();
+
+            $recetteRepository->saveRecette($recette);
+
+            foreach ($regimes as $regime) {
+                $recette->removeRegime($regime);
+                $recetteRepository->saveRegime($regime);
+            }
+
+            foreach ($regimes as $regime) {
+                $regime->addRecette($recette);
+                $recetteRepository->saveRegime($regime);
+            }
+
+            foreach ($allergies as $allergy) {
+                $recette->removeAllergy($allergy);
+                $recetteRepository->saveAllergie($allergy);
+            }
+
+            foreach ($allergies as $allergy) {
+                $allergy->addRecette($recette);
+                $recetteRepository->saveAllergie($allergy);
+            }
 
             return $this->redirectToRoute('app_recette_index', [], Response::HTTP_SEE_OTHER);
         }

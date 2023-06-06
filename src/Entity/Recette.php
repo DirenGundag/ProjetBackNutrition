@@ -37,11 +37,11 @@ class Recette
     #[ORM\Column(length: 255)]
     private ?string $etapes = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $typesregimes = null;
+    // #[ORM\Column(length: 255)]
+    // private ?string $typesregimes = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $allergenes = null;
+    // #[ORM\Column(length: 255)]
+    // private ?string $allergenes = null;
 
     #[ORM\ManyToMany(targetEntity: Allergie::class, mappedBy: 'recette')]
     private Collection $allergies;
@@ -145,29 +145,29 @@ class Recette
     }
 
 
-    public function getTypesregimes(): ?string
-    {
-        return $this->typesregimes;
-    }
+    // public function getTypesregimes(): ?string
+    // {
+    //     return $this->typesregimes;
+    // }
 
-    public function setTypesregimes(string $typesregimes): self
-    {
-        $this->typesregimes = $typesregimes;
+    // public function setTypesregimes(string $typesregimes): self
+    // {
+    //     $this->typesregimes = $typesregimes;
 
-        return $this;
-    }
+    //     return $this;
+    // }
 
-    public function getAllergenes(): ?string
-    {
-        return $this->allergenes;
-    }
+    // public function getAllergenes(): ?string
+    // {
+    //     return $this->allergenes;
+    // }
 
-    public function setAllergenes(string $allergenes): self
-    {
-        $this->allergenes = $allergenes;
+    // public function setAllergenes(string $allergenes): self
+    // {
+    //     $this->allergenes = $allergenes;
 
-        return $this;
-    }
+    //     return $this;
+    // }
 
     /**
      * @return Collection<int, Allergie>

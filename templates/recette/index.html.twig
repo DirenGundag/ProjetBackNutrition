@@ -32,8 +32,16 @@
                 <td>{{ recette.tempscuisson ? recette.tempscuisson|date('H:i:s') : '' }}</td>
                 <td>{{ recette.ingredients }}</td>
                 <td>{{ recette.etapes }}</td>
-                <td>{{ recette.typesregimes }}</td>
-                <td>{{ recette.allergenes }}</td>
+                {# <td>{{ recette.typesregimes }}</td>
+                <td>{{ recette.allergenes }}</td> #}
+                    {% for regime in recette.regimes %}
+                <td>{{ regime.nom }}</td>
+            {% endfor %}
+
+            {% for allergie in recette.allergies %}
+                <td>{{ allergie.nom }}</td>
+
+            {% endfor %}
                 <td>
                     <a href="{{ path('app_recette_show', {'id': recette.id}) }}">show</a>
                     <a href="{{ path('app_recette_edit', {'id': recette.id}) }}">edit</a>

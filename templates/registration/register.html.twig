@@ -39,7 +39,7 @@
           label: "Allergies"
         }) }}
         {{ form_row(registrationForm.regimes, {
-          label: "Régimes"
+          'attr':{'class':'regimes', 'label': "Régimes"}
         }) }}
         {{ form_row(registrationForm.agreeTerms, {
             label:"Accepter les conditions d'utilisation"
@@ -164,6 +164,9 @@ label {
   display: flex;
   justify-content: center;
   align-items: flex-start;
+}
+.regimes{
+  background-color: green;
 }
 </style>  
 {% endblock %}
