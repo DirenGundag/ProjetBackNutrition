@@ -10,6 +10,7 @@
             <tr>
                 <th>Id</th>
                 <th>Titre</th>
+                <th>Image</th>
                 <th>Description</th>
                 <th>Tempspreparation</th>
                 <th>Tempsrepos</th>
@@ -18,6 +19,7 @@
                 <th>Etapes</th>
                 <th>Typesregimes</th>
                 <th>Allergenes</th>
+                <th>Accessible</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -26,6 +28,7 @@
             <tr>
                 <td>{{ recette.id }}</td>
                 <td>{{ recette.titre }}</td>
+                <td><img src="{{ vich_uploader_asset(recette, 'imageFile') }}" alt="{{ recette.imageName }}"></td>
                 <td>{{ recette.description }}</td>
                 <td>{{ recette.tempspreparation ? recette.tempspreparation|date('H:i:s') : '' }}</td>
                 <td>{{ recette.tempsrepos ? recette.tempsrepos|date('H:i:s') : '' }}</td>
@@ -42,6 +45,7 @@
                 <td>{{ allergie.nom }}</td>
 
             {% endfor %}
+                 <td>{{ recette.access }}</td>
                 <td>
                     <a href="{{ path('app_recette_show', {'id': recette.id}) }}">show</a>
                     <a href="{{ path('app_recette_edit', {'id': recette.id}) }}">edit</a>

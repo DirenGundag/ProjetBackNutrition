@@ -3,18 +3,27 @@
 namespace App\Entity;
 
 use App\Repository\RecetteRepository;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\HttpFoundation\File\File;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: RecetteRepository::class)]
+#[Vich\Uploadable]
 class Recette
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
     private ?int $id = null;
+
+    #[Vich\UploadableField(mapping: 'recette_image', fileNameProperty: 'imageName')]
+    private $imageFile = null;
+
+    #[ORM\Column(type: 'string')]
+    private ?string $imageName = null;
 
     #[ORM\Column(length: 255)]
     private ?string $titre = null;
@@ -49,6 +58,9 @@ class Recette
     #[ORM\ManyToMany(targetEntity: Regime::class, mappedBy: 'recette')]
     private Collection $regimes;
 
+    #[ORM\Column]
+    private ?bool $access = null;
+
     public function __construct()
     {
         $this->allergies = new ArrayCollection();
@@ -58,6 +70,27 @@ class Recette
     public function getId(): ?int
     {
         return $this->id;
+    }
+
+    public function setImageFile(?File $imageFile = null): void
+    {
+        $this->imageFile = $imageFile;
+
+    }
+
+    public function getImageFile(): ?File
+    {
+        return $this->imageFile;
+    }
+
+    public function setImageName(?string $imageName): void
+    {
+        $this->imageName = $imageName;
+    }
+
+    public function getImageName(): ?string
+    {
+        return $this->imageName;
     }
 
     public function getTitre(): ?string
@@ -219,6 +252,18 @@ class Recette
         if ($this->regimes->removeElement($regime)) {
             $regime->removeRecette($this);
         }
+
+        return $this;
+    }
+
+    public function isAccess(): ?bool
+    {
+        return $this->access;
+    }
+
+    public function setAccess(bool $access): self
+    {
+        $this->access = $access;
 
         return $this;
     }
