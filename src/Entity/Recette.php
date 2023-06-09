@@ -61,10 +61,14 @@ class Recette
     #[ORM\Column]
     private ?bool $access = null;
 
+    #[ORM\OneToMany(mappedBy: 'recette', targetEntity: Avis::class)]
+    private Collection $avis;
+
     public function __construct()
     {
         $this->allergies = new ArrayCollection();
         $this->regimes = new ArrayCollection();
+        $this->avis = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -266,5 +270,40 @@ class Recette
         $this->access = $access;
 
         return $this;
+    }
+
+    /**
+     * @return Collection<int, Avis>
+     */
+    public function getAvis(): Collection
+    {
+        return $this->avis;
+    }
+
+    public function addAvi(Avis $avi): self
+    {
+        if (!$this->avis->contains($avi)) {
+            $this->avis->add($avi);
+            $avi->setRecette($this);
+        }
+
+        return $this;
+    }
+
+    public function removeAvi(Avis $avi): self
+    {
+        if ($this->avis->removeElement($avi)) {
+            // set the owning side to null (unless already changed)
+            if ($avi->getRecette() === $this) {
+                $avi->setRecette(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function __toString()
+    {
+        return $this->titre;
     }
 }

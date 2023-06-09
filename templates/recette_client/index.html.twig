@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello RecetteClientController!{% endblock %}
+
+{% block body %}
+{% for recette in recettes %}
+<div >
+
+    <a href="{{ path('app_recette_client_show', { 'id': recette.id }) }}">
+        <img src="{{ vich_uploader_asset(recette, 'imageFile') }}" alt="{{ recette.imageName }}" />
+        <div>
+            <h5>
+                {{ recette.titre }}
+            </h5>
+        </div>
+    </a>
+
+</div>
+{% endfor %}
+{% endblock %}
