@@ -1,28 +1,29 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Avis index{% endblock %}
+{% block title %}Avis{% endblock %}
 
 {% block body %}
-    <h1>Avis index</h1>
+    <h1>Liste des avis</h1>
 
+<div class="container">
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
+                {# <th>Id</th> #}
                 <th>Note</th>
                 <th>Commentaire</th>
-                <th>actions</th>
+                {# <th>actions</th> #}
             </tr>
         </thead>
         <tbody>
         {% for avi in avis %}
             <tr>
-                <td>{{ avi.id }}</td>
+                {# <td>{{ avi.id }}</td> #}
                 <td>{{ avi.note }}</td>
                 <td>{{ avi.commentaire }}</td>
                 <td>
-                    <a href="{{ path('app_avis_show', {'id': avi.id}) }}">show</a>
-                    <a href="{{ path('app_avis_edit', {'id': avi.id}) }}">edit</a>
+                    <a class="btn" href="{{ path('app_avis_show', {'id': avi.id}) }}">Afficher</a>
+                    <a class="btn" href="{{ path('app_avis_edit', {'id': avi.id}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}
@@ -33,5 +34,21 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_avis_new') }}">Create new</a>
+    <a class="btn" href="{{ path('app_avis_new') }}">Créer un nouvel avis</a>
+
+</div>
+<style>
+.btn {
+    background-color:#609A7D;
+     color:FFFFFF;
+       
+}
+.btn:hover {
+  color: black;
+}
+h1 {
+    font-family: Arial;
+    text-align: center;
+}
+</style>
 {% endblock %}

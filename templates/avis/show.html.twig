@@ -3,14 +3,16 @@
 {% block title %}Avis{% endblock %}
 
 {% block body %}
-    <h1>Avis</h1>
+
+<div class="container">
+    <h1>Afficher les avis</h1>
 
     <table class="table">
         <tbody>
-            <tr>
+            {# <tr>
                 <th>Id</th>
                 <td>{{ avi.id }}</td>
-            </tr>
+            </tr> #}
             <tr>
                 <th>Note</th>
                 <td>{{ avi.note }}</td>
@@ -22,9 +24,26 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_avis_index') }}">back to list</a>
+    <a class="btn" href="{{ path('app_avis_index') }}">Précédent</a>
 
-    <a href="{{ path('app_avis_edit', {'id': avi.id}) }}">edit</a>
+    <a class="btn" href="{{ path('app_avis_edit', {'id': avi.id}) }}">Modifier</a>
 
     {{ include('avis/_delete_form.html.twig') }}
+
+</div>
+<style>
+.btn {
+    background-color:#609A7D;
+     color:FFFFFF;
+     margin-top:2%;
+       
+}
+.btn:hover {
+  color: black;
+}
+h1 {
+    font-family: Arial;
+    text-align: center;
+}
+</style>
 {% endblock %}

@@ -1,11 +1,30 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Avis{% endblock %}
+{% block title %}Avis{% endblock %}
 
 {% block body %}
-    <h1>Create new Avis</h1>
+
+<div class="container">
+    <h1>Créer un nouvel avis</h1>
 
     {{ include('avis/_form.html.twig') }}
 
-    <a href="{{ path('app_avis_index') }}">back to list</a>
+    <a class="btn" href="{{ path('app_avis_index') }}">Précédent</a>
+
+</div>
+<style>
+.btn {
+    background-color:#609A7D;
+     color:FFFFFF;
+     margin-top:2%;
+       
+}
+.btn:hover {
+  color: black;
+}
+h1 {
+    font-family: Arial;
+    text-align: center;
+}
+</style>
 {% endblock %}
