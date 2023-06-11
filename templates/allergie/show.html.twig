@@ -3,13 +3,14 @@
 {% block title %}Allergie{% endblock %}
 
 {% block body %}
-    <h1>Allergie</h1>
+<div class="container">
+    <h1>Afficher l'allergie</h1>
 
     <table class="table">
         <tbody>
             <tr>
-                <th>Id</th>
-                <td>{{ allergie.id }}</td>
+                {# <th>Id</th>
+                <td>{{ allergie.id }}</td> #}
             </tr>
             <tr>
                 <th>Nom</th>
@@ -18,9 +19,26 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_allergie_index') }}">back to list</a>
+    <a class="btn" href="{{ path('app_allergie_index') }}">Précédent</a>
 
-    <a href="{{ path('app_allergie_edit', {'id': allergie.id}) }}">edit</a>
+    <a class="btn" href="{{ path('app_allergie_edit', {'id': allergie.id}) }}">Modifier</a>
 
     {{ include('allergie/_delete_form.html.twig') }}
+
+</div>
+<style>
+.btn {
+    background-color:#609A7D;
+     color:FFFFFF;
+     margin-top:2%;
+       
+}
+.btn:hover {
+  color: black;
+}
+h1 {
+    font-family: Arial;
+    text-align: center;
+}
+</style>
 {% endblock %}

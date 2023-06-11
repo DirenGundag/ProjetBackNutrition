@@ -1,26 +1,27 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Allergie index{% endblock %}
+{% block title %}Allergie{% endblock %}
 
 {% block body %}
-    <h1>Allergie index</h1>
+<div class="container">
+    <h1>Liste des allergies</h1>
 
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
+                {# <th>Id</th> #}
                 <th>Nom</th>
-                <th>actions</th>
+                {# <th>actions</th> #}
             </tr>
         </thead>
         <tbody>
         {% for allergie in allergies %}
             <tr>
-                <td>{{ allergie.id }}</td>
+                {# <td>{{ allergie.id }}</td> #}
                 <td>{{ allergie.nom }}</td>
                 <td>
-                    <a href="{{ path('app_allergie_show', {'id': allergie.id}) }}">show</a>
-                    <a href="{{ path('app_allergie_edit', {'id': allergie.id}) }}">edit</a>
+                    <a class="btn" href="{{ path('app_allergie_show', {'id': allergie.id}) }}">Afficher</a>
+                    <a class="btn" href="{{ path('app_allergie_edit', {'id': allergie.id}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}
@@ -31,5 +32,20 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_allergie_new') }}">Create new</a>
+    <a class="btn" href="{{ path('app_allergie_new') }}">Créer une nouvelle allergie</a>
+</div>
+<style>
+.btn {
+    background-color:#609A7D;
+     color:FFFFFF;
+       
+}
+.btn:hover {
+  color: black;
+}
+h1 {
+    font-family: Arial;
+    text-align: center;
+}
+</style>
 {% endblock %}
