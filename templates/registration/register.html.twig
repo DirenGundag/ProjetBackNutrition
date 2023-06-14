@@ -8,7 +8,7 @@
     {% endfor %}
 <div class="conteneur">
     <div>
-      <img class="image" src="https://media.discordapp.net/attachments/971727360430850062/1112867483133677628/de057f7bfb707a1af6ffd57d03094142-removebg-preview.png?width=372&height=586" alt="">
+      <img class="image" src="https://media.discordapp.net/attachments/971727360430850062/1112865567561502842/de057f7bfb707a1af6ffd57d03094142-removebg-preview.png?width=372&height=886" alt="">
     </div>
 
     <div class="cadre">
@@ -35,12 +35,18 @@
         {{ form_row(registrationForm.plainPassword, {
           label: false
         }) }}
+        <div class="d-flex mb-1 justify-content-center">
+        <div>
         {{ form_row(registrationForm.allergies, {
-          label: "Allergies"
+          'attr':{'class':'allergies', 'label': "Allergies"}
         }) }}
+        </div>
+        <div>
         {{ form_row(registrationForm.regimes, {
           'attr':{'class':'regimes', 'label': "Régimes"}
         }) }}
+        </div>
+        </div>
         {{ form_row(registrationForm.agreeTerms, {
             label:"Accepter les conditions d'utilisation"
         }) }}
@@ -157,7 +163,7 @@ label {
 }
 .image{
   width: 420px;
-  margin-top: 14%;
+  margin-top: 24%;
   border-radius: 20px;
 }
 .conteneur {
@@ -166,7 +172,27 @@ label {
   align-items: flex-start;
 }
 .regimes{
-  background-color: green;
+  width: 150px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+.regimes option {
+  padding: 8px;
+}
+.allergies{
+  width: 160px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+.allergies option {
+  padding: 8px;
+}
+.d-flex{
+  margin-left: 12%;
 }
 </style>  
 {% endblock %}

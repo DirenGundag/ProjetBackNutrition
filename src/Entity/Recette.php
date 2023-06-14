@@ -58,8 +58,8 @@ class Recette
     #[ORM\ManyToMany(targetEntity: Regime::class, mappedBy: 'recette')]
     private Collection $regimes;
 
-    #[ORM\Column]
-    private ?bool $access = null;
+    // #[ORM\Column]
+    // private ?bool $access = null;
 
     #[ORM\OneToMany(mappedBy: 'recette', targetEntity: Avis::class)]
     private Collection $avis;
@@ -260,17 +260,17 @@ class Recette
         return $this;
     }
 
-    public function isAccess(): ?bool
-    {
-        return $this->access;
-    }
+    // public function isAccess(): ?bool
+    // {
+    //     return $this->access;
+    // }
 
-    public function setAccess(bool $access): self
-    {
-        $this->access = $access;
+    // public function setAccess(bool $access): self
+    // {
+    //     $this->access = $access;
 
-        return $this;
-    }
+    //     return $this;
+    // }
 
     /**
      * @return Collection<int, Avis>

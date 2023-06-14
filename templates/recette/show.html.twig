@@ -53,6 +53,19 @@
                 <th>Allergenes</th>
                 <td>{{ recette.allergenes }}</td>
             </tr> #}
+            <tr>
+                <th>Types de régimes</th>
+             {% for regime in recette.regimes %}
+                <td>{{ regime.nom }}</td>
+            {% endfor %}
+            </tr>
+            <tr>
+                <th>Allergies</th>
+            {% for allergie in recette.allergies %}
+                <td>{{ allergie.nom }}</td>
+
+            {% endfor %}
+            </tr>
         </tbody>
     </table>
 
