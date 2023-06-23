@@ -3,13 +3,16 @@
 {% block title %}Recette{% endblock %}
 
 {% block body %}
-    <h1>Recette</h1>
+    
 
-    <table class="table">
+{#     
         <tbody>
-            <tr>
+            {# <tr>
                 <th>Id</th>
                 <td>{{ recette.id }}</td>
+            </tr> #} 
+            {# <tr>
+                <td><img src="{{ vich_uploader_asset(recette, 'imageFile') }}" alt="{{ recette.imageName }}"/></td>
             </tr>
             <tr>
                 <th>Titre</th>
@@ -31,14 +34,176 @@
                 <th>Tempscuisson</th>
                 <td>{{ recette.tempscuisson ? recette.tempscuisson|date('H:i:s') : '' }}</td>
             </tr>
+            <tr> #} 
+
+                {# <tbody>
+    <tr>
+        <td>
+            <div class="d-flex align-items-start" style="margin-top: 20px;">
+                <div>
+                    <img src="{{ vich_uploader_asset(recette, 'imageFile') }}" alt="{{ recette.imageName }}" style="max-width: 300px;">
+                </div>
+                <div style="margin-left: 40px; margin-top:1%">
+                    <table>
+                        <tr>
+                            <td class="titrerecette">{{ recette.titre }}</td>
+                        </tr>
+                        <tr>
+                            <td>{{ recette.description }}</td>
+                        </tr>
+                        <tr>
+                            <th>Temps de préparation</th>
+                            <td>{{ recette.tempspreparation ? recette.tempspreparation|date('H:i:s') : '' }}</td>
+                        </tr>
+                        <tr>
+                            <th>Temps de repos</th>
+                            <td>{{ recette.tempsrepos ? recette.tempsrepos|date('H:i:s') : '' }}</td>
+                        </tr>
+                        <tr>
+                            <th>Temps de cuisson</th>
+                            <td>{{ recette.tempscuisson ? recette.tempscuisson|date('H:i:s') : '' }}</td>
+                        </tr>
+                        <tr>
+                            <th>Types de régimes</th>
+                            <td>
+                                {% for regime in recette.regimes %}
+                                    {{ regime.nom }}
+                                {% endfor %}
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Allergies</th>
+                            <td>
+                                {% for allergie in recette.allergies %}
+                                    {{ allergie.nom }}
+                                {% endfor %}
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </td>
+    </tr>
+</tbody> #}
+
+<tbody>
+    <tr>
+        <td>
+            <div class="d-flex align-items-start" style="margin-top: 40px;">
+                <div>
+                    <img src="{{ vich_uploader_asset(recette, 'imageFile') }}" alt="{{ recette.imageName }}" style="max-width: 300px;margin-left:8%">
+                </div>
+                <div style="margin-left: 70px; margin-top:1%">
+                    <div  class="titrerecette">
+                        <tr>
+                            <td>{{ recette.titre }}</td>
+                        </tr>
+                    </div>
+                    <div class="description">
+                        <tr>
+                            <td>{{ recette.description }}</td>
+                        </tr>
+                    </div>
+                    <div class="tp1">
+                        <tr>
+                            <div class="titretp">
+                            <th>Temps de préparation</th>
+                            </div>
+                                <div class="tp2">
+                            <td>{{ recette.tempspreparation ? recette.tempspreparation|date('H:i:s') : '' }}</td>
+                            </div>
+                        </tr>
+                    </div>
+                    <div class="tr1">
+                        <tr>
+                            <div class="titretr">
+                            <th>Temps de repos</th>
+                            </div>
+                                <div class="tr2">
+                            <td>{{ recette.tempsrepos ? recette.tempsrepos|date('H:i:s') : '' }}</td>
+                            </div>
+                        </tr>
+                    </div>
+                    <div class="tc1">
+                        <tr>
+                            <div class="titretc">
+                            <th>Temps de cuisson</th>
+                            </div>
+                                <div class="tc2">
+                            <td>{{ recette.tempscuisson ? recette.tempscuisson|date('H:i:s') : '' }}</td>
+                            </div>
+                        </tr>
+                    </div>
+                    <div class="tregime1">
+                        <tr>
+                            <div class="titreregime">
+                            <th>Types de régimes</th>
+                            </div>
+                                <div class="tregime2">
+                            <td>
+                                {% for regime in recette.regimes %}
+                                    {{ regime.nom }}
+                                {% endfor %}
+                            </td>
+                        </div>
+                        </tr>
+                    </div>
+                    <div class="allergi">
+                        <tr>
+                            <div class="titreallergie">
+                            <th>Allergies</th>
+                            </div>
+                                <div class="tallergi2">
+                            <td>
+                                {% for allergie in recette.allergies %}
+                                    {{ allergie.nom }}
+                                {% endfor %}
+                            </td>
+                        </div>
+                        </tr>
+                    </div>
+                </div>
+            </div>
+        </td>
+    </tr>
+</tbody>
+
+                
+                
+                
+            {# <th>Types de régimes</th>
+         {% for regime in recette.regimes %}
+            <td>{{ regime.nom }}</td>
+        {% endfor %}
+        </tr>
+        <tr>
+            <th>Allergies</th>
+        {% for allergie in recette.allergies %}
+            <td>{{ allergie.nom }}</td>
+
+        {% endfor %} #}
+        <div class="cadre">
+        <div>
             <tr>
-                <th>Ingredients</th>
+                <div class="ingredient">
+                <th>Ingrédients : </th>
+                </div>
+                <div class="ingredientdonnee">
                 <td>{{ recette.ingredients }}</td>
+                </div>
             </tr>
+        </div>
+            <div>
             <tr>
-                <th>Etapes</th>
+                <div class="etape">
+                <th>Etapes : </th>
+                </div>
+                <div>
                 <td>{{ recette.etapes }}</td>
+                </div>
             </tr>
+        </div>
+        </div>
             {# <tr>
                 <th>Typesregimes</th>
                 <td>{{ recette.typesregimes }}</td>
@@ -48,13 +213,15 @@
                 <td>{{ recette.allergenes }}</td>
             </tr> #}
         </tbody>
-    </table>
+
 
     <style>
 
 .rating {
     text-align: center;
     color: black;
+    margin-left: 35%;
+    margin-top: -5%;
 }
 .star {
     font-size: 1.5rem;
@@ -78,13 +245,149 @@ button[type="submit"] {
     padding: 10px 20px;
     cursor: pointer;
     font-size: 16px;
-    margin-top: 10px;
+    margin-top: 80px;
     font-family: arial;
+    margin-left: 40%;
   }
-  
+
+.titrerecette{
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    margin-left: 25%;
+}
+.ingredient{
+    margin-top: 3%;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    text-decoration: underline;
+}
+.etape{
+    margin-top: 3%;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    text-decoration: underline;
+}
+.cadre{
+    border: 1px solid #000;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    padding-bottom: 40px;
+    padding-left: 40px;
+    border-radius: 10px;
+    background-color: #F3F3F7;
+    
+}
+.cadreavis{
+    border: 1px solid #000;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    padding-bottom: 40px;
+    padding-left: 40px;
+    border-radius: 10px;
+    padding-top: 40px;
+    
+    
+}
+.cadrerecette{
+    border: 1px solid #000;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    padding-bottom: 40px;
+    padding-left: 80px;
+    border-radius: 10px;
+    padding-top: 40px;
+    width: 100%;
+    background-color: #F3F3F7;
+    
+}
+.cadrerecette img {
+   margin-bottom: 6%;
+   margin-left: 3%;
+}
+
+.notetitre{
+    margin-left: 60%;
+    text-decoration: underline;
+}
+
+.commentairetitre{
+    margin-top: -4%;
+    margin-bottom: 2%;
+    text-decoration: underline;
+}
+.d-flex{
+    margin-top: 4%;
+}
+.titrerecette2{
+    text-decoration: underline;
+    margin-bottom: 2%;
+}
+.tp1{
+    margin-top: 4%;
+}
+.tr1{
+    margin-top: -8%;
+    margin-left: 40%;
+}
+.tc1{
+    margin-top: -8%;
+    margin-left: 80%;
+}
+.tregime1{
+    margin-top: 4%;
+    margin-left: 20%;
+}
+.allergi{
+    margin-top: -7%;
+    margin-left: 60%;
+}
+.description{
+    margin-left: 100px;
+}
+.tp2{
+    margin-top: 2%;
+    margin-left: 6%;
+}
+.tr2{
+    margin-top: 3%;
+    margin-left: 6%;
+}
+.tc2{
+    margin-top: 10%;
+    margin-left: 20%;
+}
+.tregime2{
+    margin-top: 2%;
+    margin-left: 3%;
+}
+.tallergi2{
+    margin-top: 2%;
+    margin-left: -8%;
+}
+.titretp{
+    font-weight: bold;
+}
+.titretr{
+    font-weight: bold;
+}
+.titretc{
+    font-weight: bold;
+}
+.titreregime{
+    font-weight: bold;
+}
+.titreallergie{
+    font-weight: bold;
+}
 </style>
+<div class="cadreavis">
     {{ form_start(form, { 'action': path('app_recette_client_show', { 'id': recette.id }) }) }}
-    {{ form_widget(form.commentaire) }}
+<h4 class="notetitre">Donner une note : </h4>
+  <h4 class="commentairetitre">Ajouter un commentaire : </h4>
+    {{ form_widget(form.commentaire)  }}
     <div class="rating">
         <span class="star" data-rating="1">&#9733;</span>
         <span class="star" data-rating="2">&#9733;</span>
@@ -130,5 +433,14 @@ function updateStars(rating) {
     });
 }
 </script>
+</div>
+
+<div class="cadrerecette">
+<h2 class="titrerecette2">Voir aussi : </h2>
+    {% for recette in recettes %}
+    <a href="{{ path('app_recette_client_show', { 'id': recette.id }) }}">
+    <img src="{{ vich_uploader_asset(recette, 'imageFile') }}" alt="{{ recette.imageName }}"/>
+{% endfor %}
+</div>
 
 {% endblock %}

@@ -6,6 +6,7 @@ use App\Entity\Avis;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 class AvisType extends AbstractType
 {
@@ -13,7 +14,14 @@ class AvisType extends AbstractType
     {
         $builder
             ->add('note')
-            ->add('commentaire')
+            ->add('commentaire',  TextareaType::class, [
+                'label' => 'Commentaires',
+                'attr' => [
+                    'class' => 'form-field',
+                    'cols' => '50',
+                    'rows' => '5'
+                ],
+            ])
             // ->add('user')
             // ->add('recette')
         ;

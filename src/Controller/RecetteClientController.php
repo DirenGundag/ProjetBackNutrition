@@ -41,7 +41,7 @@ class RecetteClientController extends AbstractController
     }
 
     #[Route('/{id}', name: 'app_recette_client_show', methods: ['GET','POST'])]
-    public function show(Recette $recette, Request $request): Response
+    public function show(Recette $recette, Request $request, RecetteRepository $recetteRepository): Response
     {
         $patient = $this->getUser();
        // Créer une instance de l'entité Avis
@@ -64,6 +64,7 @@ class RecetteClientController extends AbstractController
        return $this->render('recette_client/show.html.twig', [
            'recette' => $recette,
            'form' => $form->createView(),
+           'recettes' => $recetteRepository->findAll(),
 
        ]);
 
