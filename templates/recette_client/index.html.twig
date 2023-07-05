@@ -4,21 +4,9 @@
 {% endblock %}
 
 {% block body %}
-	{# {% for recette in recettes %} #}
-	{# <div>
-										
-										    <a href="{{ path('app_recette_client_show', { 'id': recette.id }) }}">
-										        <img src="{{ vich_uploader_asset(recette, 'imageFile') }}" alt="{{ recette.imageName }}" />
-										        <div>
-										            <h5>
-										                {{ recette.titre }}
-										            </h5>
-										        </div>
-										    </a>
-										</div> #}
-		<h2>Nos recettes</h2>
-		<div class="row m-4 mb-4 "> 
-        {% for recette in recettes %}
+	<h2>Nos recettes</h2>
+	<div class="row m-4 mb-4 ">
+		{% for recette in recettes %}
 			<div class="col-4 g-3">
 				<div class="card">
 					<a href="{{ path('app_recette_client_show', { 'id': recette.id }) }}">
@@ -29,14 +17,14 @@
 									{{ recette.titre }}
 								</h5>
 								<div class="d-flex mb-1 justify-content-center">
-								<div>
-								<h6>Préparation</h6>
-								<td>{{ recette.tempspreparation ? recette.tempspreparation|date('H:i:s') : '' }}</td>
-								</div>
-								<div>
-								<h6>Cuisson</h6>
-								<td>{{ recette.tempscuisson ? recette.tempscuisson|date('H:i:s') : '' }}</td>
-								</div>
+									<div>
+										<h6>Préparation</h6>
+										<td>{{ recette.tempspreparation ? recette.tempspreparation|date('H:i:s') : '' }}</td>
+									</div>
+									<div>
+										<h6>Cuisson</h6>
+										<td>{{ recette.tempscuisson ? recette.tempscuisson|date('H:i:s') : '' }}</td>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -48,23 +36,22 @@
 
 
 	<style>
-    .col-4{
-        margin-bottom: 4%;
-        margin-top: 4%;
-    }
-	h2{
-		text-align: center;
-		margin-top: 2%;
-	}
-	.d-flex{
-		gap: 25%;
-		color: #000;
-	}
-	.card-title{
-		font-size: 15px;
-		text-align: center;
-		color: #000;
-	}
-    </style>
-	{# {% endfor %} #}
+		.col-4 {
+			margin-bottom: 4%;
+			margin-top: 0%;
+		}
+		h2 {
+			text-align: center;
+			margin-top: 2%;
+		}
+		.d-flex {
+			gap: 25%;
+			color: #000;
+		}
+		.card-title {
+			font-size: 15px;
+			text-align: center;
+			color: #000;
+		}
+	</style>
 {% endblock %}

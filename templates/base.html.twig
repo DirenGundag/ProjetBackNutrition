@@ -62,7 +62,7 @@ href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" int
                     <a class="nav-link" href="{{ path('app_allergie_index') }}">Allergie</a>
                 </li>
                 <li class="nav-item {{ app.request.get('_route') == 'app_user_index' ? 'active' : '' }}">
-                    <a class="nav-link" href="{{ path('app_user_index') }}">User</a>
+                    <a class="nav-link" href="{{ path('app_user_index') }}">Patients</a>
                 </li>
                 <li class="nav-item {{ app.request.get('_route') == 'app_register' ? 'active' : '' }}">
                     <a class="nav-link" href="{{ path('app_register') }}">Inscription</a>
@@ -99,7 +99,7 @@ href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" int
 <div class="info">
 <h4 class="titre">Diététicienne & Nutritionniste</h4>
 <p class="adresse">17 avenue de la paix Caen - 14000 </p>
-<p class="horaire">Ouvert tous les jours de 11H00 à 14H00 et de 18H00 à 23H00 hors jours fériés.</p>
+{# <p class="horaire">Ouvert tous les jours de 11H00 à 14H00 et de 18H00 à 23H00 hors jours fériés.</p> #}
 <p class="tel">Tél: 01 03 08 10 21 </p>
 </div>
 
